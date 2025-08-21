@@ -1,10 +1,9 @@
 import { useState, useCallback } from 'react';
 import createContextHook from '@nkzw/create-context-hook';
 import { Profile, Comment } from '@/types/profile';
-import { mockProfiles } from '@/data/mockProfiles';
 
 export const [ProfilesProvider, useProfiles] = createContextHook(() => {
-  const [profiles, setProfiles] = useState<Profile[]>(mockProfiles);
+  const [profiles, setProfiles] = useState<Profile[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [refreshing, setRefreshing] = useState<boolean>(false);
 
